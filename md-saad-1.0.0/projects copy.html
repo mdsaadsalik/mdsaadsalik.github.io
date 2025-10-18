@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Projects - Md Saad | Robotics & Engineering Portfolio</title>
+  <meta name="description" content="Academic and professional projects in robotics, AI, mechanical design, and engineering innovation">
+  <meta name="keywords" content="robotics projects, engineering projects, AI research, mechanical design">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+  <style>
+    /* === BASIC STYLES === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* === HEADER STYLES === */
+    .header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #3498db;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* === PAGE HEADER === */
+    .page-header {
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .page-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* === PROJECTS SECTION === */
+    .projects-section {
+      padding: 40px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      color: #2c3e50;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    .section-title h2:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 3px;
+      background: #3498db;
+      margin: 10px auto;
+    }
+
+    .section-title p {
+      color: #7f8c8d;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* === FILTER BUTTONS === */
+    .projects-filter {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      padding: 10px 20px;
+      background: #f8f9fa;
+      border: 2px solid #e9ecef;
+      border-radius: 25px;
+      color: #6c757d;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: #3498db;
+      border-color: #3498db;
+      color: white;
+    }
+
+    /* === PROJECT LIST === */
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .project-item {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border-left: 5px solid #3498db;
+    }
+
+    .project-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .project-icon {
+      font-size: 2.5rem;
+      color: #3498db;
+      margin-top: 5px;
+    }
+
+    .project-title h3 {
+      color: #2c3e50;
+      margin-bottom: 5px;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .project-meta {
+      color: #7f8c8d;
+      font-size: 0.95rem;
+    }
+
+    .project-description {
+      color: #34495e;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tech-tag {
+      background: linear-gradient(135deg, #3498db, #2980b9);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .project-actions {
+      text-align: right;
+    }
+
+    .view-details-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .view-details-btn:hover {
+      background: #2980b9;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+    }
+
+    /* === PROJECT DETAIL PAGE === */
+    .project-detail-page {
+      display: none;
+      padding: 40px 0;
+    }
+
+    .project-detail-page.active {
+      display: block;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ecf0f1;
+      color: #2c3e50;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .back-btn:hover {
+      background: #dde4e6;
+    }
+
+    .detail-header {
+      margin-bottom: 30px;
+      border-bottom: 2px solid #ecf0f1;
+      padding-bottom: 20px;
+    }
+
+    .detail-header h2 {
+      color: #2c3e50;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .detail-header p {
+      color: #7f8c8d;
+      font-size: 1.1rem;
+    }
+
+    .detail-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .detail-text h3 {
+      color: #2c3e50;
+      margin: 25px 0 15px;
+      font-weight: 600;
+    }
+
+    .detail-text p {
+      color: #34495e;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .detail-text ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .detail-text li {
+      color: #34495e;
+      margin-bottom: 10px;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    .detail-text li:before {
+      content: "▸";
+      color: #3498db;
+      font-weight: bold;
+      position: absolute;
+      left: -15px;
+    }
+
+    .detail-media {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .media-placeholder {
+      background: #f8f9fa;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      color: #7f8c8d;
+      border: 2px dashed #dee2e6;
+    }
+
+    .media-placeholder i {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      color: #3498db;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .project-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .project-link:hover {
+      background: #2980b9;
+      transform: translateY(-2px);
+    }
+
+    /* === CTA SECTION === */
+    .cta {
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .cta h3 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .cta p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 15px 40px;
+      background: white;
+      color: #3498db;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      color: #2980b9;
+    }
+
+    /* === FOOTER === */
+    .footer {
+      background: #2c3e50;
+      color: white;
+      padding: 40px 0 20px;
+      margin-top: 60px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-section h3:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 2px;
+      background: #3498db;
+    }
+
+    .footer-section p {
+      margin-bottom: 15px;
+      opacity: 0.8;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background: #3498db;
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* === RESPONSIVE STYLES === */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      nav ul {
+        justify-content: center;
+      }
+      
+      nav ul li {
+        margin: 0 10px;
+      }
+      
+      .detail-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .project-links {
+        flex-direction: column;
+      }
+      
+      .projects-filter {
+        gap: 5px;
+      }
+      
+      .filter-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="projects-page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">Md <span>Saad</span></a>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#publications">Publications</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Academic & Research Projects</h1>
+      <p>Explore my work in robotics, AI, and mechanical engineering</p>
+    </div>
+  </section>
+
+  <!-- Projects List Section -->
+  <section id="projects-list" class="projects-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Project Portfolio</h2>
+        <p>Research and development work in robotics, AI, and mechanical engineering</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="projects-filter">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="robotics">Robotics & AI</button>
+        <button class="filter-btn" data-filter="mechanical">Mechanical Design</button>
+        <button class="filter-btn" data-filter="research">Research</button>
+        <button class="filter-btn" data-filter="academic">Academic</button>
+      </div>
+
+      <!-- Projects List -->
+      <div class="projects-list">
+        
+        <!-- Project 1: Advanced Robotic Manipulation -->
+        <div class="project-item" data-category="robotics,research">
+          <div class="project-header">
+            <div class="project-icon">
+              <i class="bi bi-robot"></i>
+            </div>
+            <div class="project-title">
+              <h3>Advanced Robotic Manipulation Using DRL and LLMs</h3>
+              <p class="project-meta">Research Project | Robotics and Automation Lab | Nov 2023 - Present</p>
+            </div>
+          </div>
+          <div class="project-description">
+            <p>Integration of Deep Reinforcement Learning and Large Language Models for intelligent robotic manipulation in complex, unstructured environments.</p>
+          </div>
+          <div class="tech-tags">
+            <span class="tech-tag">ROS</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">Gazebo</span>
+            <span class="tech-tag">LLMs</span>
+          </div>
+          <div class="project-actions">
+            <a href="#" class="view-details-btn" data-project="project1">View Details</a>
+          </div>
+        </div>
+
+        <!-- Project 2: 3-DOF Robotic Arm -->
+        <div class="project-item" data-category="robotics,academic">
+          <div class="project-header">
+            <div class="project-icon">
+              <i class="bi bi-gear-fill"></i>
+            </div>
+            <div class="project-title">
+              <h3>3-DOF Articulated Robotic Arm</h3>
+              <p class="project-meta">Academic Project | M-Tech Machine Design | 2023</p>
+            </div>
+          </div>
+          <div class="project-description">
+            <p>Design and control optimization of a 3-DOF articulated robotic arm with focus on precision, speed, and reliability for manufacturing environments.</p>
+          </div>
+          <div class="tech-tags">
+            <span class="tech-tag">MATLAB</span>
+            <span class="tech-tag">Simulink</span>
+            <span class="tech-tag">SolidWorks</span>
+            <span class="tech-tag">Control Systems</span>
+          </div>
+          <div class="project-actions">
+            <a href="#" class="view-details-btn" data-project="project2">View Details</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Detail Pages -->
+  
+  <!-- Project 1 Detail Page -->
+  <section id="project1-detail" class="project-detail-page">
+    <div class="container">
+      <a href="#" class="back-btn back-to-list"><i class="bi bi-arrow-left"></i> Back to Projects</a>
+      
+      <div class="detail-header">
+        <h2>Advanced Robotic Manipulation Using DRL and LLMs</h2>
+        <p>Research Project | Robotics and Automation Lab | Nov 2023 - Present</p>
+      </div>
+      
+      <div class="detail-content">
+        <div class="detail-text">
+          <h3>Project Overview</h3>
+          <p>This research project focuses on developing an advanced framework for robotic manipulation by integrating Deep Reinforcement Learning (DRL) with Large Language Models (LLMs). The primary objective is to enable robots to perform complex tasks in unstructured environments with improved adaptability and enhanced human-robot interaction capabilities.</p>
+          
+          <h3>Technical Implementation</h3>
+          <ul>
+            <li><strong>HiPPO-DIK Framework:</strong> Hierarchical Proximal Policy Optimization with Differentiable Inverse Kinematics for real-time joint configuration in high-DOF robotic manipulators</li>
+            <li><strong>ROS Integration:</strong> Complete implementation within Robot Operating System framework for modularity and scalability</li>
+            <li><strong>Gazebo Simulation:</strong> Comprehensive testing in simulated environments for validation and performance analysis</li>
+            <li><strong>LLM Integration:</strong> Natural language processing capabilities for intuitive human-robot interaction</li>
+          </ul>
+
+          <h3>Research Impact</h3>
+          <p>This work represents a significant advancement in robotic manipulation, bridging the gap between traditional control methods and modern AI techniques. The integration of LLMs allows for more natural and intuitive control interfaces, while DRL provides the learning capability for complex task execution.</p>
+          
+          <div class="project-links">
+            <a href="#" class="project-link"><i class="bi bi-github"></i> GitHub Repository</a>
+            <a href="#" class="project-link"><i class="bi bi-file-text"></i> Research Paper</a>
+          </div>
+        </div>
+        
+        <div class="detail-media">
+          <div class="media-placeholder">
+            <i class="bi bi-image"></i>
+            <p>Project Diagram / Framework Architecture</p>
+          </div>
+          <div class="media-placeholder">
+            <i class="bi bi-play-circle"></i>
+            <p>Simulation Video Demonstration</p>
+          </div>
+          <div class="media-placeholder">
+            <i class="bi bi-graph-up"></i>
+            <p>Performance Analysis Results</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project 2 Detail Page -->
+  <section id="project2-detail" class="project-detail-page">
+    <div class="container">
+      <a href="#" class="back-btn back-to-list"><i class="bi bi-arrow-left"></i> Back to Projects</a>
+      
+      <div class="detail-header">
+        <h2>3-DOF Articulated Robotic Arm for Industrial Applications</h2>
+        <p>Academic Project | M-Tech Machine Design | 2023</p>
+      </div>
+      
+      <div class="detail-content">
+        <div class="detail-text">
+          <h3>Project Overview</h3>
+          <p>This academic project involved the comprehensive design, simulation, and optimization of a 3-DOF articulated robotic arm specifically tailored for industrial applications. The focus was on achieving high precision, operational speed, and reliability in manufacturing environments through advanced kinematic modeling and control strategies.</p>
+          
+          <h3>Technical Implementation</h3>
+          <ul>
+            <li><strong>Kinematic Analysis:</strong> Developed complete forward and inverse kinematic models for precise motion planning</li>
+            <li><strong>Dynamic Modeling:</strong> Created detailed dynamic models using MATLAB Simulink to simulate real-world performance</li>
+            <li><strong>Control System:</strong> Implemented advanced torque control strategies for accurate end-effector positioning</li>
+            <li><strong>Structural Design:</strong> Optimized mechanical design for strength-to-weight ratio and manufacturing feasibility</li>
+          </ul>
+
+          <h3>Performance Metrics</h3>
+          <p>The robotic arm demonstrated exceptional performance with positioning accuracy within ±0.1mm, repeatability of 99.8%, and operational speeds suitable for high-throughput industrial applications. The torque control implementation ensured smooth operation and reduced mechanical stress on components.</p>
+          
+          <div class="project-links">
+            <a href="#" class="project-link"><i class="bi bi-github"></i> Simulation Code</a>
+            <a href="#" class="project-link"><i class="bi bi-file-text"></i> Project Report</a>
+          </div>
+        </div>
+        
+        <div class="detail-media">
+          <div class="media-placeholder">
+            <i class="bi bi-bounding-box"></i>
+            <p>3D CAD Model & Design</p>
+          </div>
+          <div class="media-placeholder">
+            <i class="bi bi-play-circle"></i>
+            <p>Robotic Arm Operation Video</p>
+          </div>
+          <div class="media-placeholder">
+            <i class="bi bi-graph-up"></i>
+            <p>Performance Analysis Charts</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <h3>Interested in My Work?</h3>
+      <p>Let's collaborate on innovative robotics and engineering projects. I'm always open to discussing new opportunities and research collaborations.</p>
+      <a class="cta-btn" href="index.html#contact">Start a Conversation</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Md Saad Salik Anjum</h3>
+          <p>Mechanical Engineer & Robotics Researcher specializing in AI-driven robotic systems, automation, and advanced control strategies.</p>
+          <div class="social-links">
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-github"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-google"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <p><i class="bi bi-phone"></i> +91 9527200617</p>
+          <p><i class="bi bi-envelope"></i> mohammed.saadsalik@gmail.com</p>
+          <p><i class="bi bi-geo-alt"></i> New Delhi, India</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="index.html">Home</a></p>
+          <p><a href="projects.html">Projects</a></p>
+          <p><a href="services.html">Services</a></p>
+          <p><a href="index.html#contact">Contact</a></p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Md Saad Salik Anjum. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple JavaScript for project filtering and detail pages
+    document.addEventListener('DOMContentLoaded', function() {
+      // Filter functionality
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const projectItems = document.querySelectorAll('.project-item');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          const filterValue = this.getAttribute('data-filter');
+          
+          projectItems.forEach(item => {
+            if (filterValue === 'all') {
+              item.style.display = 'block';
+            } else {
+              const categories = item.getAttribute('data-category').split(',');
+              if (categories.includes(filterValue)) {
+                item.style.display = 'block';
+              } else {
+                item.style.display = 'none';
+              }
+            }
+          });
+        });
+      });
+      
+      // Project detail page functionality
+      const viewDetailsButtons = document.querySelectorAll('.view-details-btn');
+      const backButtons = document.querySelectorAll('.back-to-list');
+      const projectsListSection = document.getElementById('projects-list');
+      const detailPages = document.querySelectorAll('.project-detail-page');
+      
+      // Show project detail when "View Details" is clicked
+      viewDetailsButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          const projectId = this.getAttribute('data-project');
+          
+          // Hide all detail pages and projects list
+          detailPages.forEach(page => page.classList.remove('active'));
+          projectsListSection.style.display = 'none';
+          
+          // Show the selected project detail
+          document.getElementById(`${projectId}-detail`).classList.add('active');
+          
+          // Scroll to top
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+      
+      // Go back to projects list
+      backButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Hide all detail pages
+          detailPages.forEach(page => page.classList.remove('active'));
+          
+          // Show projects list
+          projectsListSection.style.display = 'block';
+          
+          // Scroll to top
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
