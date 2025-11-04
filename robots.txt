@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mdsaadsalik.github.io/sitemap.xml
